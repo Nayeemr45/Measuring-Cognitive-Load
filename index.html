@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <style>
+    .container{
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+    }
+    .btn{
+      padding: 5px 5px;
+      background-color: rgb(139, 207, 247);
+      border-radius: 15px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div>
+        <p id="demo"></p>
+        <button onclick="getSize()" class="btn">Get your screen size</button>
+        <!-- <button onclick="myFunction()">Copy text</button> -->
+      </div>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeTYvHVAeh_-09BBOW0mectHtDrTOKQMWz014Euwx0HqAOqdQ/viewform?embedded=true"
+        width="640"
+        height="752"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        >Loading…</iframe
+      >
+    </div>
+  </body>
+
+  <script>
+          size=screen.width + "*" + screen.height
+
+    function myFunction() {
+      /* Get the text field */
+    //   var copyText = document.getElementById("demo");
+      var copyText = size;
+        console.log(copyText.value)
+      /* Select the text field */
+    //    copyText.select();
+    //   copyText.setSelectionRange(0, 99999); /* For mobile devices */
+      /* Copy the text inside the text field */
+     document.execCommand("copy");
+
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText);
+    }
+    function getSize() {
+      alert("You Screen size is :" + screen.width + "*" + screen.height);
+      // document.getElementById("demo").innerHTML =
+      //   "Screen size is " + screen.width + "x" + screen.height;
+    }
+  </script>
+</html>
