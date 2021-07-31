@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <style>
-    .container{
+    .container {
       display: grid;
       justify-content: center;
       justify-items: center;
     }
-    .btn{
+    .btn {
       padding: 5px 5px;
       background-color: rgb(139, 207, 247);
       border-radius: 15px;
       border: 1px solid black;
+    }
+    .iframe{
+      width: 100vw;
     }
   </style>
   <body>
@@ -27,31 +30,33 @@
         <button onclick="getSize()" class="btn">Get your screen size</button>
         <!-- <button onclick="myFunction()">Copy text</button> -->
       </div>
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSeTYvHVAeh_-09BBOW0mectHtDrTOKQMWz014Euwx0HqAOqdQ/viewform?embedded=true"
-        width="640"
-        height="500"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        >Loading…</iframe
-      >
+      <div class="iframe">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeTYvHVAeh_-09BBOW0mectHtDrTOKQMWz014Euwx0HqAOqdQ/viewform?embedded=true"
+          width="640"
+          height="500"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…</iframe
+        >
+      </div>
     </div>
   </body>
 
   <script>
-          size=screen.width + "*" + screen.height
+    size = screen.width + "*" + screen.height;
 
     function myFunction() {
       /* Get the text field */
-    //   var copyText = document.getElementById("demo");
+      //   var copyText = document.getElementById("demo");
       var copyText = size;
-        console.log(copyText.value)
+      console.log(copyText.value);
       /* Select the text field */
-    //    copyText.select();
-    //   copyText.setSelectionRange(0, 99999); /* For mobile devices */
+      //    copyText.select();
+      //   copyText.setSelectionRange(0, 99999); /* For mobile devices */
       /* Copy the text inside the text field */
-     document.execCommand("copy");
+      document.execCommand("copy");
 
       /* Alert the copied text */
       alert("Copied the text: " + copyText);
